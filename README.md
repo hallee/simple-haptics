@@ -1,6 +1,6 @@
 # Simple Haptics
 
-Simple Haptics is simplified wrapper for [`Core Haptics`](https://developer.apple.com/documentation/corehaptics) to make integration with SwiftUI projects dead-simple. 
+Simple Haptics is a convenience wrapper for [`Core Haptics`](https://developer.apple.com/documentation/corehaptics) to make it easier to fire transient haptic taps, similar to `UIFeedbackGenerator`.
 
 ## Usage
 
