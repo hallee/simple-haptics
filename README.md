@@ -7,9 +7,9 @@ Simple Haptics is a convenience wrapper for [`Core Haptics`](https://developer.a
 ```swift
 import SimpleHaptics
 
-let haptics = try? SimpleHapticGenerator()
+let haptics = SimpleHapticGenerator()
 
-try? haptics?.fire(intensity: 0.5, sharpness: 1)
+try? haptics.fire(intensity: 0.5, sharpness: 1)
 ```
 
 ### Integration with SwiftUI
@@ -22,7 +22,7 @@ import SwiftUI
 
 class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 
-    private let haptics = try! SimpleHapticGenerator()
+    let haptics = SimpleHapticGenerator()
 
     ...
 

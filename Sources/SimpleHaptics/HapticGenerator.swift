@@ -3,7 +3,7 @@ import CoreHaptics
 
 public final class SimpleHapticGenerator: ObservableObject {
 
-    private let hapticEngine: CHHapticEngine
+    private let hapticEngine: CHHapticEngine?
 
     private var needsToRestart = false
 
@@ -17,28 +17,28 @@ public final class SimpleHapticGenerator: ObservableObject {
             ],
             relativeTime: 0)
         let pattern = try CHHapticPattern(events: [event], parameters: [])
-        let player = try hapticEngine.makePlayer(with: pattern)
+        let player = try hapticEngine?.makePlayer(with: pattern)
         if needsToRestart {
             try? start()
         }
-        try player.start(atTime: 0)
+        try player?.start(atTime: 0)
     }
 
-    public init() throws {
-        hapticEngine = try CHHapticEngine()
-        hapticEngine.resetHandler = resetHandler
-        hapticEngine.stoppedHandler = restartHandler
-        try start()
+    public init() {
+        hapticEngine = try? CHHapticEngine()
+        hapticEngine?.resetHandler = resetHandler
+        hapticEngine?.stoppedHandler = restartHandler
+        try? start()
     }
 
     /// Stops the internal CHHapticEngine. Should be called when your app enters the background.
     public func stop(completionHandler: CHHapticEngine.CompletionHandler? = nil) {
-        hapticEngine.stop(completionHandler: completionHandler)
+        hapticEngine?.stop(completionHandler: completionHandler)
     }
 
     /// Starts the internal CHHapticEngine. Should be called when your app enters the foreground.
     public func start() throws {
-        try hapticEngine.start()
+        try hapticEngine?.start()
         needsToRestart = false
     }
 
