@@ -1,7 +1,7 @@
 import Foundation
 import CoreHaptics
 
-public final class HapticGenerator: ObservableObject {
+public final class SimpleHapticGenerator: ObservableObject {
 
     private let hapticEngine: CHHapticEngine
 
