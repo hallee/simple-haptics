@@ -68,7 +68,7 @@ struct MyView: View {
 
 ```swift
 dependencies: [
-    .package(url: "https://github.com/hallee/simple-haptics", from: "0.0.1")
+    .package(url: "https://github.com/hallee/simple-haptics", from: "0.0.2")
 ],
 targets: [
     .target(name: "YourTarget", dependencies: ["SimpleHaptics"])
