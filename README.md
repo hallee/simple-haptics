@@ -7,9 +7,7 @@ Simple Haptics is a convenience wrapper for [`Core Haptics`](https://developer.a
 ```swift
 import SimpleHaptics
 
-let haptics: SimpleHapticGenerator? = {
-    try? SimpleHapticGenerator()
-}()
+let haptics = try? SimpleHapticGenerator()
 
 try? haptics?.fire(intensity: 0.5, sharpness: 1)
 ```
@@ -24,9 +22,7 @@ import SwiftUI
 
 class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 
-    private let haptics: SimpleHapticGenerator = {
-        try! SimpleHapticGenerator()
-    }()
+    private let haptics = try! SimpleHapticGenerator()
 
     ...
 
@@ -52,6 +48,9 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 And then child views can use it simply by creating an `@EnvironmentObject` variable of the correct type:
 
 ```swift
+import SimpleHaptics
+import SwiftUI
+
 struct MyView: View {
 
     @EnvironmentObject private var haptics: SimpleHapticGenerator
