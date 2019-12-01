@@ -1,0 +1,7 @@
+disabled_rules:
+  - identifier_name
+  - type_name
+included:
+  - Sources/SimpleHaptics
+cyclomatic_complexity:
+  ignores_case_statements: true
