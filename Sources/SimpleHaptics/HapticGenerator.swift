@@ -21,13 +21,14 @@ public final class SimpleHapticGenerator: ObservableObject {
         if needsToRestart {
             try? start()
         }
-        try player?.start(atTime: 0)
+        try player?.start(atTime: CHHapticTimeImmediate)
     }
 
     public init() {
         hapticEngine = try? CHHapticEngine()
         hapticEngine?.resetHandler = resetHandler
         hapticEngine?.stoppedHandler = restartHandler
+        hapticEngine?.playsHapticsOnly = true
         try? start()
     }
 
