@@ -1,4 +1,6 @@
+#if canImport(Combine)
 #if canImport(CoreHaptics)
+import Combine
 import CoreHaptics
 
 @available(iOS 13, *)
@@ -58,4 +60,5 @@ public final class SimpleHapticGenerator: ObservableObject {
     }
 
 }
+#endif
 #endif
