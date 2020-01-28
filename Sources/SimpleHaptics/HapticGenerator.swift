@@ -1,6 +1,8 @@
-import Foundation
+#if canImport(CoreHaptics)
 import CoreHaptics
 
+@available(iOS 13, *)
+@available(OSX 10.15, *)
 public final class SimpleHapticGenerator: ObservableObject {
 
     private let hapticEngine: CHHapticEngine?
@@ -56,3 +58,4 @@ public final class SimpleHapticGenerator: ObservableObject {
     }
 
 }
+#endif
